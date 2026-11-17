@@ -1,0 +1,28 @@
+CIVIC PULSE: START HERE
+
+QUICK WAY (no installs, just VS Code + Live Server)
+1. Unzip, then open the "proj files" folder in VS Code.
+2. Open dist/config.js and paste your Google client ID between the quotes if you want "Continue with Google".
+   Maps use OpenStreetMap and do not need a token.
+3. Right-click dist/index.html, choose "Open with Live Server".
+   (Do not double-click the file and do not open the root index.html.)
+4. Refresh the browser after you edit config.js.
+
+DEVELOPER WAY (auto refresh on every save; needs Node.js)
+   npm install
+   npm run dev          then open the localhost link it prints
+   Google sign-in can be configured in public/config.js or in a .env file (see .env.example).
+
+AFTER CHANGING CODE IN src/ (Live Server way only)
+   npm run build        this refreshes dist/
+
+WHERE THINGS ARE (src/)
+   main.jsx              main file, integrates everything
+   landing-page.jsx      landing page
+   database.js           data layer (browser mock for now)
+   secondary-pages.jsx   feed, post issue, issue detail, sign in, register
+   mapbox-pages.jsx      map page
+   mapbox-map.jsx        OpenStreetMap view, report pins, and location picker
+   shared-components.jsx header, footer, cards, forms
+   app-context.jsx       signed-in user, routing, toasts
+   styles.css            styling and colours
